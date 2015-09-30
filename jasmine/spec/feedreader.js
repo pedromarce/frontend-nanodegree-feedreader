@@ -31,14 +31,14 @@ $(function() {
             for (var i=0;i<allFeeds.length;i++) {
                 expect(allFeeds[i].url).toBeDefined();
                 expect(allFeeds[i].url).not.toBe("");
-            };
+            }
         });  
 
         it('have name defined', function() {
             for (var i=0;i<allFeeds.length;i++) {
                 expect(allFeeds[i].name).toBeDefined();
                 expect(allFeeds[i].name).not.toBe("");
-            };
+            }
         });  
 
     });
@@ -46,7 +46,7 @@ $(function() {
     describe('The menu', function() {
 
         it('should be hidden', function() {
-            expect($('.menu-hidden .menu').length).not.toBe(0);
+            expect($('.menu').hasClass('')).not.toBe(0);
         });
 
         it('is displayed when clicked', function() {
@@ -76,13 +76,13 @@ $(function() {
 
         beforeEach(function(done) {
             loadFeed(0,function() {
-                currentContent = $('.feed .entry').innerHTML;
+                currentContent = $('.feed .entry')[0].innerHTML;
                 loadFeed(1,done);
             });
         });
 
         it('changes content for entries', function() {
-            expect($('.feed .entry').length).not.toBe(currentContent);
+            expect($('.feed .entry')[0].innerHTML).not.toEqual(currentContent);
         });
     });
 
