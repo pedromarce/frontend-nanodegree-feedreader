@@ -71,7 +71,7 @@ function loadFeed(id, cb) {
              */
             entries.forEach(function(entry) {
                 container.append(entryTemplate(entry));
-            });
+            }); 
         }
 
         if (cb) {
