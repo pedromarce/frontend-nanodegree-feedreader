@@ -46,7 +46,7 @@ $(function() {
     describe('The menu', function() {
 
         it('should be hidden', function() {
-            expect($('.menu').hasClass('')).not.toBe(0);
+            expect($('.menu-hidden .menu').length).not.toBe(0);
         });
 
         it('is displayed when clicked', function() {
